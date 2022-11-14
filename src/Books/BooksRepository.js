@@ -33,7 +33,7 @@ class BooksRepository {
   reset = async () => {
     const response = await this.httpGateway.reset(this.apiUrl + "reset");
     if (response.success) {
-      this.loadApiData();
+      await this.loadApiData();
       this.programmersModel.notify();
     } else {
       console.log("BooksRepository reset failed !!!");
