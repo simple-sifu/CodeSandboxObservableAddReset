@@ -23,7 +23,7 @@ class BooksRepository {
       requestBodyDto
     );
     if (response.success) {
-      this.loadApiData();
+      await this.loadApiData();
       this.programmersModel.notify();
     } else {
       console.log("BooksRepository.addBook failed !!!");
